@@ -1,0 +1,25 @@
+<div class="content">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Producent</th>
+        <th class="right-tb">Opcje</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr *ngFor="let manufacturer of manufacturers">
+        <td class="category">{{manufacturer.name}}</td>
+        <td class="right-tb"><a class='btn btn-info btn-xs' [routerLink]="['/admin/manufacturer/',manufacturer.id]"><span class="glyphicon glyphicon-edit"></span>Edytuj</a></td>
+      </tr>
+
+      </tbody>
+      <tfoot>
+      <tr>
+        <th class="right-tb" colspan="2"><a class='btn btn-info btn-xs' [routerLink]="['/admin/manufacturer/create']"><span class="glyphicon glyphicon-edit"></span>Dodaj producenta</a></th>
+      </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

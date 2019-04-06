@@ -1,0 +1,25 @@
+<div class="content">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Nazwa użytkownika</th>
+        <th>Email</th>
+        <th>Rola</th>
+        <th>Opcje</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr *ngFor="let user of users">
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.role == 'CUSTOMER' ? 'Klient' : 'Adminisrator'}}</td>
+        <td><a class='btn btn-info btn-xs' [routerLink]="['/admin/user/',user.id]"><span
+          class="glyphicon glyphicon-edit"></span>Edytuj</a></td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>

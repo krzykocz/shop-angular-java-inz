@@ -1,0 +1,67 @@
+<div id="shop">
+  <div class="container">
+    <div class="row bar">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-9">
+        <div class="form-block col-md-7">
+          <h2>{{title}}</h2>
+          <div class="form">
+            <form action="post" autocomplete="off" method="POST">
+              <div class="form-group">
+                <label>Nazwa:</label>
+                <input [(ngModel)]="product.name" type="text" class="form-control"
+                       name="name">
+              </div>
+              <div class="form-group">
+                <label>Cena:</label>
+                <input [(ngModel)]="product.price" type="number" class="form-control"
+                       name="price">
+              </div>
+              <div class="form-group">
+                <label>Ilość:</label>
+                <input [(ngModel)]="product.count" type="text" class="form-control"
+                       name="count">
+              </div>
+              <div class="form-group">
+                <label>Opis:</label>
+                <textarea rows="10" [(ngModel)]="product.description" type="text" class="form-control"
+                          name="description"></textarea>
+              </div>
+              <div class="form-group">
+                <label>Obraz:</label>
+                <input [(ngModel)]="product.image" type="text" class="form-control"
+                       name="image">
+              </div>
+
+              <div class="form-group">
+                <label>Kategoria:</label>
+                <select class="form-control" name="category" [(ngModel)]="product.category.id">
+                  <optgroup *ngFor="let category of categories" label="{{category.name}}">
+                    <option *ngFor="let subcategory of category.subCategory" [value]="subcategory.id"
+                            [selected]="product.category.id == subcategory.id">{{subcategory.name}}</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Producent:</label>
+                <select class="form-control" name="manufacturer" [(ngModel)]="product.manufacturer.id">
+                  <option *ngFor="let manufacturer of manufacturers" [value]="manufacturer.id"
+                          [selected]="product.manufacturer.id == manufacturer.id">{{manufacturer.name}}</option>
+                </select>
+              </div>
+
+              <div class="box-footer d-flex flex-wrap align-items-center justify-content-between">
+                <a class="btn btn-danger custom-btn left-col" [routerLink]="['/admin/product']">Cofnij</a>
+                <button (click)="save()" class="btn btn-default custom-btn right-col">Zapisz</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

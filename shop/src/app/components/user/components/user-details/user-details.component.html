@@ -1,0 +1,129 @@
+<!--<div class="container">-->
+  <!--<div class="register-page">-->
+
+    <!--<div class="form-block col-md-7">-->
+      <!--<h2>Dane osobowe</h2>-->
+      <!--<div class="form">-->
+        <!--<form action="post" autocomplete="off" method="POST">-->
+          <!--<div class="form-group">-->
+            <!--<label>Imie:</label>-->
+            <!--<input [(ngModel)]="credentials.firstname" type="text" class="form-control"-->
+                   <!--name="firstname">-->
+          <!--</div>-->
+          <!--<div class="form-group">-->
+            <!--<label>Nazwisko:</label>-->
+            <!--<input [(ngModel)]="credentials.lastname" type="text" class="form-control"-->
+                   <!--name="lastname">-->
+          <!--</div>-->
+          <!--<div class="form-group">-->
+            <!--<label>Miejscowość:</label>-->
+            <!--<input [(ngModel)]="credentials.city" type="text" class="form-control"-->
+                   <!--name="city">-->
+          <!--</div>-->
+          <!--<div class="form-group">-->
+            <!--<label>Województwo:</label>-->
+            <!--<input [(ngModel)]="credentials.voivodeship" type="text" class="form-control"-->
+                   <!--name="voivodeship">-->
+          <!--</div>-->
+          <!--<div class="form-group">-->
+            <!--<label>Kod pocztowy:</label>-->
+            <!--<input [(ngModel)]="credentials.postalCode" type="text" class="form-control"-->
+                   <!--name="postalCode">-->
+          <!--</div>-->
+          <!--<div class="form-group">-->
+            <!--<label>Ulica:</label>-->
+            <!--<input [(ngModel)]="credentials.street" type="text" class="form-control"-->
+                   <!--name="street">-->
+          <!--</div>-->
+          <!--<div class="form-group">-->
+            <!--<label>Nr domu:</label>-->
+            <!--<input [(ngModel)]="credentials.houseNr" type="text" class="form-control"-->
+                   <!--name="houseNr">-->
+          <!--</div>-->
+          <!--<div class="form-group">-->
+            <!--<label>Telefon:</label>-->
+            <!--<input [(ngModel)]="credentials.phone" type="text" class="form-control"-->
+                   <!--name="phone">-->
+          <!--</div>-->
+
+          <!--<button (click)="update()" type="submit" class="btn btn-default custom-btn">Submit</button>-->
+        <!--</form>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+<div id="shop">
+  <div class="container">
+    <div class="row bar">
+
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Imie:</label>
+              <input [(ngModel)]="credentials.firstname" type="text" class="form-control"
+                     name="firstname" required>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Nazwisko:</label>
+              <input [(ngModel)]="credentials.lastname" type="text" class="form-control"
+                     name="lastname" required>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-3">
+            <div class="form-group">
+              <label>Miejscowość:</label>
+              <input [(ngModel)]="credentials.city" type="text" class="form-control"
+                     name="city" required="required">
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="form-group">
+              <label>Kod pocztowy:</label>
+              <input [(ngModel)]="credentials.postalCode" type="text" class="form-control"
+                     name="postalCode">
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="form-group">
+              <label>Ulica:</label>
+              <input [(ngModel)]="credentials.street" type="text" class="form-control"
+                     name="street">
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="form-group">
+              <label>Nr domu:</label>
+              <input [(ngModel)]="credentials.houseNr" type="text" class="form-control"
+                     name="houseNr">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Telefon:</label>
+              <input [(ngModel)]="credentials.phone" type="text" class="form-control"
+                     name="phone">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Województwo:</label>
+              <input [(ngModel)]="credentials.voivodeship" type="text" class="form-control"
+                     name="voivodeship">
+            </div>
+          </div>
+        </div>
+        <div class="box-footer d-flex flex-wrap align-items-center justify-content-between">
+          <a class="left-col"></a>
+          <button (click)="update()" class="btn btn-default custom-btn right-col">Zapisz</button>
+        </div>
+    </div>
+
+
+  </div>
+</div>

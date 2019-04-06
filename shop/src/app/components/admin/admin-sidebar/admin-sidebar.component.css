@@ -1,0 +1,124 @@
+a {
+  color: indianred;
+  text-decoration: none;
+}
+.h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.sidebar-menu.with-icons a.nav-link {
+  position: relative;
+}
+
+.sidebar-menu.with-icons a.nav-link::before {
+  content: '\f105';
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-family: 'FontAwesome';
+}
+
+.panel-heading {
+  margin-bottom: 10px;
+}
+
+.panel-heading h3 {
+  margin-top: 5px;
+}
+
+.panel-heading .btn {
+  color: #fff;
+  text-decoration: none !important;
+}
+
+.panel-heading .btn i {
+  margin-right: 7px;
+}
+
+.panel-body p {
+  font-size: .9rem;
+  color: #555;
+}
+
+.panel-body label {
+  font-size: 0.8rem;
+  font-weight: 400 !important;
+  color: #777;
+  opacity: 0.9;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.panel-body label input {
+  margin-right: 5px;
+}
+
+.panel-body label:hover {
+  opacity: 1;
+}
+
+.panel-body span.colour {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-top: 10px;
+  margin-left: 5px;
+  border: 1px solid #555;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0;
+}
+
+.nav-pills .nav-link:hover {
+  background: #eee;
+}
+
+.nav-pills .nav-link.active {
+  background: indianred;
+}
+
+.panel {
+  margin-bottom: 20px;
+}
+
+.category-menu a.nav-link {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+ul ul a.nav-link {
+  padding-left: 30px !important;
+  font-size: 0.85rem;
+  text-transform: none !important;
+  font-weight: 400 !important;
+  color: #777;
+}
+
+.heading, .panel-heading {
+  margin-bottom: 1rem;
+}
+
+.heading h1, .panel-heading h1, .heading h2, .panel-heading h2, .heading h3, .panel-heading h3, .heading h4, .panel-heading h4, .heading h5, .panel-heading h5, .heading h6, .panel-heading h6 {
+  line-height: 1.1;
+  display: inline-block;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.heading h1:after, .panel-heading h1:after, .heading h2:after, .panel-heading h2:after, .heading h3:after, .panel-heading h3:after, .heading h4:after, .panel-heading h4:after, .heading h5:after, .panel-heading h5:after, .heading h6:after, .panel-heading h6:after {
+  content: " ";
+  display: block;
+  width: 100px;
+  height: 2px;
+  margin-top: .6rem;
+  background: indianred;
+}

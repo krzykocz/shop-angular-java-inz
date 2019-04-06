@@ -1,0 +1,19 @@
+<table class="table table-striped custab">
+  <thead>
+  <tr>
+    <th>Numer zamówienia</th>
+    <th>Data</th>
+    <th>Status</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tr *ngFor="let order of orders?.content">
+    <td>{{order.id}}</td>
+    <td>{{order.createdAt| date: 'yyyy-MM-dd'}}</td>
+    <td>{{order.status}}</td>
+    <td>
+      <a class='btn btn-info btn-xs' [routerLink]="['/user/order/',order.id]"><span class="glyphicon glyphicon-edit"></span>Szczegóły</a>
+    </td>
+  </tr>
+
+</table>

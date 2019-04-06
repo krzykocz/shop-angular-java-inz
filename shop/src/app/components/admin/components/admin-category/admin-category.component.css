@@ -1,0 +1,20 @@
+.content {
+  margin-left: 10%;
+}
+table {
+  font-size: 0.9rem;
+}
+
+.right-tb {
+  text-align: right;
+}
+
+.category {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.btn {
+  background: indianred;
+  border-color: indianred;
+}

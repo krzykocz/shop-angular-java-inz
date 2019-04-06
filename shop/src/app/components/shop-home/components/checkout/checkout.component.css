@@ -1,0 +1,47 @@
+.box {
+  margin: 20px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 20px;
+}
+
+#checkout .nav-pills {
+  margin-bottom: 30px;
+  border-bottom: 1px solid indianred;
+}
+
+#checkout .nav-pills a {
+  font-size: 0.9rem;
+  border-bottom: none !important;
+}
+
+#checkout .nav-pills a.disabled {
+  cursor: not-allowed;
+}
+
+#checkout form label {
+  margin-bottom: 5px;
+}
+
+#checkout .payment-method:hover, #checkout .shipping-method:hover {
+  cursor: pointer;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0;
+}
+
+.nav-pills .nav-link:hover {
+  background: #eee;
+}
+
+.nav-pills .nav-link.active {
+  background: indianred;
+}
+
+
+.not-active {
+  color: #6c757d;
+  background-color: transparent;
+  border-color: transparent;
+}

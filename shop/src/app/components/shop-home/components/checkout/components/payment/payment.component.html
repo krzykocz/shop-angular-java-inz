@@ -1,0 +1,34 @@
+<div class="content">
+  <div class="row">
+    <div class="col-sm-6">
+      <button class="buttonpay" (click)="setPaymentMethod('Przelew bankowy')">
+        <div class="box payment-method">
+          <h4>Przelew bankowy</h4>
+          <!--<p>Zapłać przelewem tradycyjnym</p>-->
+          <div class="box-footer text-center">
+            Zapłać przelewem tradycyjnym
+          </div>
+        </div>
+      </button>
+    </div>
+    <div class="col-sm-6">
+      <button class="buttonpay" (click)="setPaymentMethod('Odbiór osobisty')">
+        <div class="box payment-method">
+          <h4>Płatność przy odbiorze</h4>
+          <!--<p>Zapłać podczas odbierania towaru</p>-->
+          <div class="box-footer text-center">
+            Zapłać podczas odbierania towaru
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="box-footer d-flex flex-wrap align-items-center justify-content-between">
+  <div class="left-col"><a [routerLink]="['/checkout/delivery']" class="btn btn-secondary mt-0"><i class="fa fa-chevron-left"></i>Sposób dostawy</a></div>
+  <div class="right-col">
+    <button (click)="reviewPage()" type="submit" class="btn btn-template-main">Przejdź do podsumowania<i
+      class="fa fa-chevron-right"></i>
+    </button>
+  </div>
+</div>

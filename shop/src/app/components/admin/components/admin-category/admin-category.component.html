@@ -1,0 +1,32 @@
+<div class="content">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Kategoria</th>
+        <th class="right-tb">Opcje</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let category of categories">
+
+      <tr>
+        <td class="category">{{category.name}}</td>
+        <td class="right-tb"><a class='btn btn-info btn-xs' [routerLink]="['/admin/category/',category.id]"><span
+          class="glyphicon glyphicon-edit"></span>Edytuj</a></td>
+      </tr>
+      <tr *ngFor="let subcategory of category.subCategory">
+        <td>{{subcategory.name}}</td>
+        <td class="right-tb"><a class='btn btn-info btn-xs' [routerLink]="['/admin/category/',subcategory.id]"><span
+          class="glyphicon glyphicon-edit"></span>Edytuj</a></td>
+      </tr>
+
+      </tbody>
+      <tfoot>
+      <tr>
+        <th class="right-tb" colspan="2"><a class='btn btn-info btn-xs' [routerLink]="['/admin/category/create']"><span
+          class="glyphicon glyphicon-edit"></span>Dodaj kategorie</a></th>
+      </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

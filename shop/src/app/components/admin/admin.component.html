@@ -1,0 +1,18 @@
+<div id="shop">
+  <div class="container">
+    <div class="row bar">
+      <div class="col-md-3">
+        <app-admin-sidebar></app-admin-sidebar>
+      </div>
+      <div class="col-md-9" [ngSwitch]="page">
+        <app-admin-order *ngSwitchCase="'order'"></app-admin-order>
+        <app-admin-product *ngSwitchCase="'product'"></app-admin-product>
+        <app-admin-manufacturer *ngSwitchCase="'manufacturer'"></app-admin-manufacturer>
+        <app-admin-category *ngSwitchCase="'category'"></app-admin-category>
+        <app-admin-user *ngSwitchCase="'user'"></app-admin-user>
+        <!--default-->
+        <app-admin-order *ngSwitchDefault></app-admin-order>
+      </div>
+    </div>
+  </div>
+</div>

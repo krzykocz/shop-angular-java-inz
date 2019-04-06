@@ -1,0 +1,48 @@
+<div class="top-bar">
+  <div class="container">
+    <div class="row d-flex align-items-center justify-content-between">
+      <div class="searchbar">
+        <input [(ngModel)]="searchQuery" (keydown.enter)="search()" class="search_input" type="text" name="searchQuery"
+               placeholder="Szukaj...">
+        <a [routerLink]="['/search']" [queryParams]="{q: searchQuery}" class="search_icon"><i
+          class="fas fa-search"></i></a>
+      </div>
+      <div class="col-md-1 d-md-block d-none">
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex justify-content-md-end justify-content-between">
+
+          <!--<ul class="list-inline contact-info d-block d-md-none">-->
+          <!--<li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>-->
+          <!--<li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>-->
+          <!--</ul>-->
+          <div class="login">
+
+            <a routerLink="login" class="login-btn" *ngIf="!authService.getToken()"><i class="fa fa-sign-in"></i><span
+              class="d-none d-md-inline-block">Zaloguj</span></a>
+            <a routerLink="register" class="signup-btn" *ngIf="!authService.getToken()"><i class="fa fa-user"></i><span
+              class="d-none d-md-inline-block">Zarejestruj</span></a>
+
+            <a routerLink="admin" class="login-btn" *ngIf="authService.currentUser?.scopes[0].authority == 'ADMIN'"><i
+              class="fa fa-desktop"></i><span class="d-none d-md-inline-block">Panel administratora</span></a>
+
+            <a routerLink="user" class="login-btn" *ngIf="authService.getToken()"><i class="fa fa-user-circle"></i><span
+              class="d-none d-md-inline-block">{{authService.currentUser.sub}}</span></a>
+            <a routerLink="cart" class="signup-btn"><i class="fa fa-shopping-cart" style="font-size: larger"></i><span
+              class="d-none d-md-inline-block"></span></a>
+            <a href="#" class="login-btn" *ngIf="authService.getToken()" (click)="logOut()"><i
+              class="fa fa-sign-out"></i><span class="d-none d-md-inline-block">Wyloguj</span></a>
+
+
+          </div>
+          <ul class="social-custom list-inline">
+            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

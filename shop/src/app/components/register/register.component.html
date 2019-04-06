@@ -1,0 +1,120 @@
+<div class="container">
+  <div class="register-page">
+
+    <div class="form-block col-md-7">
+      <h2>Rejestracja</h2>
+      <div class="form">
+        <form [formGroup]="registerForm">
+          <div class="form-group">
+            <input formControlName="username" type="text" class="form-control" placeholder="Nazwa użytkownika"
+                   name="username"
+                   required [ngClass]="{'is-invalid': submitted && f.username.errors}">
+            <div class="invalid-feedback" *ngIf="f.username.errors">
+              <div *ngIf="f.username.errors.required"><p>*Polewymagane!</p></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input formControlName="email" type="email" class="form-control" placeholder="Email" name="email"
+                   required [ngClass]="{'is-invalid': submitted && f.email.errors}">
+            <div class=" invalid-feedback" *ngIf="f.email.errors">
+              <div *ngIf="f.email.errors.required"><p>*Pole wymagane!</p></div>
+              <div *ngIf="f.email.errors.email"><p>*Zły adres email</p></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input formControlName="firstname" type="text" class="form-control" placeholder="Imie"
+                   name="firstname"
+                   required [ngClass]="{'is-invalid': submitted && f.firstname.errors}">
+            <div class="invalid-feedback" *ngIf="f.firstname.errors">
+              <div *ngIf="f.firstname.errors.required"><p>*Pole wymagane!</p></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input formControlName="lastname" type="text" class="form-control" placeholder="Nazwisko"
+                   name="lastname"
+                   required [ngClass]="{'is-invalid': submitted && f.lastname.errors}">
+            <div class="invalid-feedback" *ngIf="f.lastname.errors">
+              <div *ngIf="f.lastname.errors.required"><p>*Pole wymagane!</p></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input formControlName="city" type="text" class="form-control" placeholder="Miasto"
+                   name="city"
+                   required [ngClass]="{'is-invalid': submitted && f.city.errors}">
+            <div class="invalid-feedback" *ngIf="f.city.errors">
+              <div *ngIf="f.city.errors.required"><p>*Pole wymagane!</p></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input formControlName="voivodeship" type="text" class="form-control" placeholder="Województwo"
+                   name="voivodeship"
+                   required [ngClass]="{'is-invalid': submitted && f.voivodeship.errors}">
+            <div class="invalid-feedback" *ngIf="f.voivodeship.errors">
+              <div *ngIf="f.voivodeship.errors.required"><p>*Pole wymagane!</p></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input formControlName="postalCode" type="text" class="form-control" placeholder="Kod pocztowy"
+                   name="postalCode"
+                   required [ngClass]="{'is-invalid': submitted && f.postalCode.errors}">
+            <div class="invalid-feedback" *ngIf="f.postalCode.errors">
+              <div *ngIf="f.postalCode.errors.required"><p>*Pole wymagane!</p></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input formControlName="street" type="text" class="form-control" placeholder="Ulica"
+                   name="street"
+                   required [ngClass]="{'is-invalid': submitted && f.street.errors}">
+            <div class="invalid-feedback" *ngIf="f.street.errors">
+              <div *ngIf="f.street.errors.required"><p>*Pole wymagane!</p></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input formControlName="houseNr" type="text" class="form-control" placeholder="Nr domu"
+                   name="houseNr"
+                   required [ngClass]="{'is-invalid': submitted && f.houseNr.errors}">
+            <div class="invalid-feedback" *ngIf="f.houseNr.errors">
+              <div *ngIf="f.houseNr.errors.required"><p>*Pole wymagane!</p></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input formControlName="phone" type="text" class="form-control" placeholder="Nr telefonu"
+                   name="phone"
+                   required [ngClass]="{'is-invalid': submitted && f.phone.errors}">
+            <div class="invalid-feedback" *ngIf="f.phone.errors">
+              <div *ngIf="f.phone.errors.required"><p>*Pole wymagane!</p></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input formControlName="password" type="password" class="form-control" placeholder="Hasło"
+                   name="password" required [ngClass]="{'is-invalid': submitted && f.password.errors}">
+            <div class=" invalid-feedback" *ngIf="f.password.errors">
+              <div *ngIf="f.password.errors.required"><p>*Pole wymagane!</p></div>
+              <div *ngIf="f.password.errors.minlength"><p>*Hasło musi zawierać minimum 8 znaków</p></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input formControlName="confirmPassword" type="password" class="form-control" placeholder="Powtórz hasło"
+                   name="confirmPassword" required [ngClass]="{'is-invalid': submitted && f.confirmPassword.errors || submitted && passwordNotMatch}">
+            <div class=" invalid-feedback" *ngIf="f.confirmPassword.errors || passwordNotMatch">
+              <div *ngIf="f.confirmPassword.required"><p>*Pole wymagane!</p></div>
+              <div *ngIf="passwordNotMatch"><p>*Hasła muszą się zgadzać</p></div>
+            </div>
+          </div>
+          <button (click)="signup()" type="submit" class="btn btn-default custom-btn">Zarejestruj</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

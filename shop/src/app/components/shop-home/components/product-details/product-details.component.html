@@ -1,0 +1,81 @@
+<div id="shop">
+  <div class="container">
+
+    <div class="row bar">
+      <div class="col-md-3">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-7">
+            <div class="card bg-light mb-3">
+              <div class="card-body">
+                <a href="" data-toggle="modal" data-target="#productModal">
+                  <img class="img-fluid" src="{{product?.image}}"/>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add to cart -->
+          <div class="col-md-5 add_to_cart_block">
+            <div class="card bg-light mb-3">
+              <div class="card-body">
+                <p class="price">{{product?.price | number : '1.2-2'}} zł</p>
+                <!--<p class="price_discounted">149.90 $</p>-->
+                <form>
+                  <div class="form-group">
+                    <label>Ilość:</label>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <button (click)="minus()" type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus"
+                                data-field="">
+                          <i class="fa fa-minus"></i>
+                        </button>
+                      </div>
+                      <input [(ngModel)]="quantity" type="number" class="form-control" id="quantity" name="quantity" min="1" max="{{product?.count}}">
+                      <div class="input-group-append">
+                        <button (click)="plus()" type="button"
+                                class="quantity-right-plus btn btn-success btn-number" data-type="plus"
+                                data-field="">
+                          <i class="fa fa-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <button (click)="addToCart()" class="btn btn-success btn-lg btn-block text-uppercase">
+                    <i class="fa fa-shopping-cart"></i> Dodaj do koszyka</button>
+                </form>
+                <div class="product_rassurance">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class="fa fa-truck fa-2x"></i><br/>Szybka dostawa</li>
+                    <li class="list-inline-item"><i class="fa fa-credit-card fa-2x"></i><br/>Bezpieczne płatności</li>
+                    <li class="list-inline-item"><i class="fa fa-phone fa-2x"></i><br/>888 888 888</li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="col-md-12">
+            <div class="card border-light mb-3">
+              <div class="card-header bg-indianred text-white text-uppercase"><i class="fa fa-align-justify"></i> Opis
+              </div>
+              <div class="card-body">
+                <p class="card-text text-lg-center">
+                  {{product?.name}}
+                </p>
+                <p class="card-text text-center">
+                  {{product?.description}}
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

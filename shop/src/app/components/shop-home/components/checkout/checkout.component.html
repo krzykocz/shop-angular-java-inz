@@ -1,0 +1,53 @@
+<div id="content">
+  <div class="container">
+    <div class="row">
+      <div id="checkout" class="col-lg-9 mx-auto">
+        <div class="box border-bottom-0">
+          <form method="get" action="shop-checkout2.html" [ngSwitch]="page">
+            <ul class="nav nav-pills nav-fill">
+
+              <li class="nav-item"><a [routerLink]="['/checkout/address']" routerLinkActive #rla1="routerLinkActive"
+                                      [ngClass]="{'active': rla1.isActive, 'not-active': !rla1.isActive}"
+                                      class="nav-link">
+                <i class="fa fa-map-marker"></i><br>Adres</a></li>
+
+              <li class="nav-item"><a [routerLink]="['/checkout/delivery']" routerLinkActive #rla2="routerLinkActive"
+                                      [ngClass]="{'active': rla2.isActive, 'not-active': !rla2.isActive}"
+                                      class="nav-link">
+                <i class="fa fa-truck"></i><br>Sposób dostawy</a></li>
+
+              <li class="nav-item"><a [routerLink]="['/checkout/payment']" routerLinkActive #rla3="routerLinkActive"
+                                      [ngClass]="{'active': rla3.isActive, 'not-active': !rla3.isActive}"
+                                      class="nav-link"><i class="fa fa-money">
+              </i><br>Sposób płatności</a></li>
+
+              <li class="nav-item"><a [routerLink]="['/checkout/review']" routerLinkActive #rla4="routerLinkActive"
+                                      [ngClass]="{'active': rla4.isActive, 'not-active': !rla4.isActive}"
+                                      class="nav-link"><i class="fa fa-eye">
+              </i><br>Podsumowanie</a></li>
+            </ul>
+
+            <app-checkout-address *ngSwitchCase="'address'">
+            </app-checkout-address>
+
+            <app-checkout-delivery *ngSwitchCase="'delivery'"
+                                   [deliveryMethod]="deliveryMethod"
+                                   (deliveryMethodChange)="setDeliveryMethod($event)">
+            </app-checkout-delivery>
+
+            <app-checkout-payment *ngSwitchCase="'payment'"
+                                  [paymentMethod]="paymentMethod"
+                                  (paymentMethodChange)='setPaymentMethod($event)'>
+            </app-checkout-payment>
+
+            <app-checkout-review *ngSwitchCase="'review'"
+                                 [deliveryMethod]="deliveryMethod"
+                                 [paymentMethod]="paymentMethod">
+            </app-checkout-review>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

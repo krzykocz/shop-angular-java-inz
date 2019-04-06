@@ -1,0 +1,43 @@
+<div class="login-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-8 m-auto col-sm-8 col-12">
+        <div class="log-box">
+          <div class="row">
+            <div class="col-xl-5 col-sm-5 col-12 pad-right-0">
+              <div class="logo-back">
+              </div>
+            </div>
+            <div class="col-xl-7 col-sm-7 col-12 pad-left-0">
+              <div class="log-content">
+                <h1>Zaloguj</h1>
+                <div class="log-body">
+                  <form action="post" autocomplete="off" method="POST">
+                    <div class="input-group form-group myr-top">
+                      <label>Login</label>
+                      <input [(ngModel)]="credentials.username" type="text" class="form-control"
+                             name="username" placeholder="Login" title="Wprowadź login">
+                    </div>
+                    <div class="input-group form-group myr-top">
+                      <label>Hasło</label>
+                      <input [(ngModel)]="credentials.password" type="password" class="form-control"
+                             name="password" placeholder="Hasło" title="Wprowadź hasło">
+                    </div>
+                    <!--<a (click)="signIn()" class="btn btn-theme1">Login</a>-->
+                    <button (click)="signIn()" class="btn btn-theme1" type="submit"
+                            title="Przycisk zaloguj">Zaloguj
+                    </button>
+                  </form>
+                  <!--<div class="log-bottom-cotent">-->
+                    <!--<a routerLink="/register">Rejestracja</a>-->
+                    <!--<a href="forgotpassword.html" class="pull-right">Forgot Password</a>-->
+                  <!--</div>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

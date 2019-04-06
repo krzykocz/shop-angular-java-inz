@@ -1,0 +1,15 @@
+table {
+  font-size: 0.9rem;
+}
+
+table img {
+  min-width: 50px !important;
+  max-width: 50px !important;
+  height: 50px;
+}
+
+.btn {
+  background: indianred;
+  border-color: indianred;
+  color: whitesmoke;
+}

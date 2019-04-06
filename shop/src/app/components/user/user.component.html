@@ -1,0 +1,15 @@
+<div id="shop">
+  <div class="container">
+    <div class="row bar">
+      <div class="col-md-3">
+        <app-user-sidebar></app-user-sidebar>
+      </div>
+      <div class="col-md-9" [ngSwitch]="page">
+        <app-user-details *ngSwitchCase="'details'"></app-user-details>
+        <app-orders *ngSwitchCase="'orders'"></app-orders>
+        <!--default-->
+        <app-user-details *ngSwitchDefault></app-user-details>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="content">
+  <div class="row">
+    <div class="col-sm-6">
+      <button class="buttonpay" (click)="setDeliveryMethod('Dostawa do domu')">
+        <div class="box shipping-method">
+          <h4>Dostawa do domu</h4>
+          <p>Zamówienia do godziny 15 dostarczamy tego samego dnia.</p>
+          <div class="box-footer text-center">
+            Bezpłatna do 50km
+            <br><small>Powyżej 50zł +1zł od kilometra</small>
+            <br><small>Płatność u kierowcy</small>
+          </div>
+        </div>
+      </button>
+    </div>
+    <div class="col-sm-6">
+      <button class="buttonpay" (click)="setDeliveryMethod('Odbiór osobisty')">
+        <div class="box shipping-method">
+          <h4>Odbiór osobisty</h4>
+          <p>Towar gotowy do odbioru w kilka minut</p>
+          <div class="box-footer text-center">
+            Bezpłatny
+          </div>
+        </div>
+      </button>
+    </div>
+</div>
+</div>
+<div class="box-footer d-flex flex-wrap align-items-center justify-content-between">
+  <div class="left-col"><a [routerLink]="['/checkout/address']" class="btn btn-secondary mt-0"><i class="fa fa-chevron-left"></i>Adres</a></div>
+  <div class="right-col">
+    <button (click)="paymentPage()" type="submit" class="btn btn-template-main">Sposób płatności<i
+      class="fa fa-chevron-right"></i>
+    </button>
+  </div>
+</div>

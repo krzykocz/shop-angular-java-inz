@@ -1,0 +1,64 @@
+﻿.h5 {
+  font-size: 1rem;
+}
+.product {
+  text-align: center;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.product .image {
+  overflow: hidden;
+  max-height: 190px;
+}
+
+.product .image a {
+  margin: 0;
+}
+
+.product .text {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.product .text h3 {
+  min-height: 63px;
+}
+
+.product .price {
+  font-size: 1.1rem;
+}
+
+.product .price del {
+  color: #999;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.product img {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.product:hover img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.product:hover .text {
+  border-color: #555;
+}
+
+.product a {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #333;
+  text-decoration: none !important;
+  margin-top: 15px;
+}
+
+.products-big .image {
+  min-height: 250px;
+  max-height: 250px;
+}
+
