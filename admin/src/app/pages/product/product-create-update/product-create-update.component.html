@@ -29,6 +29,24 @@
                 <input [(ngModel)]="product.price" type="number" class="form-control"
                        name="price">
               </div>
+
+              <div class="form-group">
+                <label>Dostępność:</label>
+                <select class="form-control" name="availability" [(ngModel)]="product.availability">
+                  <option [value]="'W magazynie (1-2 dni)'"
+                  [selected]="product.availability == 'W magazynie (1-2 dni)'">W magazynie (1-2 dni)
+                  </option>
+
+                  <option [value]="'W hurtowni (7-14 dni)'"
+                          [selected]="product.availability == 'W hurtowni (7-14 dni)'">W hurtowni (7-14 dni)
+                  </option>
+
+                  <option [value]="'Na zamówienie (20-31 dni)'"
+                          [selected]="product.availability == 'Na zamówienie (20-31 dni)'">Na zamówienie (20-31 dni)
+                  </option>
+                </select>
+              </div>
+
               <div class="form-group">
                 <label>Ilość:</label>
                 <input [(ngModel)]="product.count" type="text" class="form-control"

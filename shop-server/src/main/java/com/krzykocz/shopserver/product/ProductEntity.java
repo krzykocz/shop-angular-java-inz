@@ -33,6 +33,8 @@ public class ProductEntity extends AuditEntity {
 
     private String image;
 
+    private String availability;
+
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "category_id", nullable = false)
     private CategoryEntity category;

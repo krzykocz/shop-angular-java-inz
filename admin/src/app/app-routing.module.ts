@@ -20,6 +20,7 @@ const routes: Routes = [
   {path: 'dashboard', component: PagesComponent},
   // Product
   {path: 'product', component: ProductComponent},
+  {path: 'product/less', component: ProductComponent},
   {path: 'product/:id', component: ProductCreateUpdateComponent},
   // User
   {path: 'user', component: UserComponent},

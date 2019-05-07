@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from '../../services/product.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -8,23 +9,39 @@ import {ProductService} from '../../services/product.service';
 })
 export class ProductComponent implements OnInit {
 
-  public searchText;
+  public nameSearch;
+  public countSearch;
+  public priceSearch;
   public products;
-  private page = 0;
   public totalPages: any = 0;
+  private page = 0;
+  private url;
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService, private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.activatedRoute.url.subscribe(result => {
+      this.url = result[1];
+      console.log(this.url);
+    });
     this.getProducts();
+
   }
 
   getProducts() {
-    this.productService.getAll(this.page, 20).subscribe(result => {
-      this.products = result['content'];
-      this.totalPages = new Array(result['totalPages']);
-    });
+    if (this.url === undefined) {
+      this.productService.getAll(this.page, 20).subscribe(result => {
+        this.products = result['content'];
+        this.totalPages = new Array(result['totalPages']);
+        console.log(this.products);
+      });
+    } else {
+      this.productService.getAllProductsWithCountLessThan(50).subscribe(result => {
+        this.products = result['content'];
+        this.totalPages = new Array(result['totalPages']);
+      });
+    }
   }
 
 

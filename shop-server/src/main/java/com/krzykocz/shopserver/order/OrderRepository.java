@@ -17,4 +17,6 @@ public interface OrderRepository extends JpaRepository<OrderEntity, Long> {
     Page<OrderEntity> findAllBySellerUsername(String username, Pageable pageable);
 
     Page<OrderEntity> findAllBySellerIsNull(Pageable pageable);
+
+    Integer countAllBySellerId(Long sellerId);
 }

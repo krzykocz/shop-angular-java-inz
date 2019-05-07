@@ -47,10 +47,28 @@
             </tfoot>
           </table>
         </div>
+        <div class="table-responsive" *ngIf="complaint==true">
+          <table class="table">
+            <thead>
+            <tr>
+              <th colspan="1">Data reklamacji</th>
+              <th colspan="4">Powód</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>{{order?.complaintDate | date: 'dd-MM-yyyy'}}</td>
+              <td>{{order?.complaintDescription}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
 
         <div class="box-footer d-flex flex-wrap align-items-center justify-content-between">
           <a class="btn btn-danger custom-btn left-col" [routerLink]="['/user/orders']">Przejdź do zamówień</a>
-          <a class="right-col"></a>
+          <a class="right-col" *ngIf="complaint == true"></a>
+          <a class="btn btn-danger custom-btn right-col" [routerLink]="['/user/complaint/' + order?.id]"
+             *ngIf="complaint == false">Reklamacja</a>
         </div>
 
         <!--MESSAGES-->
@@ -84,8 +102,6 @@
         </div>
 
         <!--ENDMESSAGES-->
-
-
 
 
       </div>

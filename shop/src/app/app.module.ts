@@ -46,6 +46,7 @@ import { AdminCategoryCreateUpdateComponent } from './components/admin/component
 import { AdminUserCreateUpdateComponent } from './components/admin/components/admin-user/admin-user-create-update/admin-user-create-update.component';
 import { UserOrderDetailsComponent } from './components/user/components/orders/user-order-details/user-order-details.component';
 import { AdminOrderUpdateComponent } from './components/admin/components/admin-order/admin-order-update/admin-order-update.component';
+import { UserOrderComplaintComponent } from './components/user/components/orders/user-order-complaint/user-order-complaint.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { AdminOrderUpdateComponent } from './components/admin/components/admin-o
     AdminCategoryCreateUpdateComponent,
     AdminUserCreateUpdateComponent,
     UserOrderDetailsComponent,
-    AdminOrderUpdateComponent
+    AdminOrderUpdateComponent,
+    UserOrderComplaintComponent
   ],
   imports: [
     BrowserModule,

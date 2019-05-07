@@ -17,6 +17,7 @@ import {AdminCategoryCreateUpdateComponent} from './components/admin/components/
 import {AdminUserCreateUpdateComponent} from './components/admin/components/admin-user/admin-user-create-update/admin-user-create-update.component';
 import {UserOrderDetailsComponent} from './components/user/components/orders/user-order-details/user-order-details.component';
 import {AdminOrderUpdateComponent} from './components/admin/components/admin-order/admin-order-update/admin-order-update.component';
+import {UserOrderComplaintComponent} from './components/user/components/orders/user-order-complaint/user-order-complaint.component';
 
 const routes: Routes = [
   {path: '', component: ShopHomeComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'user', redirectTo: 'user/orders'},
   {path: 'user/order/:id', component: UserOrderDetailsComponent, canActivate: [AuthGuard]},
+  {path: 'user/complaint/:id', component: UserOrderComplaintComponent, canActivate: [AuthGuard]},
   {path: 'user/:page', component: UserComponent, canActivate: [AuthGuard]},
   {path: 'cart', component: CartComponent},
   {path: 'checkout/:page', component: CheckoutComponent, canActivate: [AuthGuard]},

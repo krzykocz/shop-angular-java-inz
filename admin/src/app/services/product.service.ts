@@ -18,6 +18,10 @@ export class ProductService {
     return this.http.get(this.url + '/category/' + id + '/products');
   }
 
+  getAllProductsWithCountLessThan(count) {
+    return this.http.get(this.url + '/product/less/' + count);
+  }
+
   get(id) {
     return this.http.get(this.url + '/product/' + id);
   }

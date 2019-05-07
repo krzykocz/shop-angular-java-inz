@@ -45,6 +45,11 @@ export class CartComponent implements OnInit {
     this.router.navigate(['/checkout/address']);
   }
 
+  del(id) {
+    this.cartService.del(id);
+    this.router.navigate(['/cart']);
+  }
+
 
   // order() {
   //   for (const cartItem of this.cart) {

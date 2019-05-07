@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
 public class ProductController {
@@ -23,6 +25,11 @@ public class ProductController {
     @GetMapping("/product/{id}")
     public ProductEntity getProductById(@PathVariable Long id) {
         return productRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Product not found!"));
+    }
+
+    @GetMapping("/product/less/{count}")
+    public Page<ProductEntity> getProductsWithCountLessThan(@PathVariable Short count, Pageable pageable) {
+        return productRepository.findAllByCountLessThanAndCountGreaterThan(count, (short) 0, pageable);
     }
 
     @GetMapping("/product/search")
@@ -44,6 +51,7 @@ public class ProductController {
             newProduct.setCount(product.getCount());
             newProduct.setDescription(product.getDescription());
             newProduct.setImage(product.getImage());
+            newProduct.setAvailability(product.getAvailability());
             newProduct.setCategory(product.getCategory());
             newProduct.setManufacturer(product.getManufacturer());
             return ResponseEntity.status(HttpStatus.CREATED).body(productRepository.save(newProduct));
@@ -63,6 +71,7 @@ public class ProductController {
         product.setCount(productDetails.getCount());
         product.setDescription(productDetails.getDescription());
         product.setImage(productDetails.getImage());
+        product.setAvailability(productDetails.getAvailability());
         product.setCategory(productDetails.getCategory());
         product.setManufacturer(productDetails.getManufacturer());
 

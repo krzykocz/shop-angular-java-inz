@@ -51,4 +51,14 @@ public class MessageController {
     public List<MessageEntity> getAllUnreadedUserMessages() {
         return messageRepository.findAllByReadedIsFalseAndUserRole(UserRoleEnum.CUSTOMER);
     }
+
+    @PutMapping("/message/order/{orderId}/user/{userId}")
+    public ResponseEntity<?> setAsReaded(@PathVariable Long orderId, @PathVariable Long userId) {
+        List<MessageEntity> messages = messageRepository.findAllByReadedIsFalseAndOrderIdAndUserId(orderId, userId);
+        for (MessageEntity message : messages) {
+            message.setReaded(true);
+            messageRepository.save(message);
+        }
+        return ResponseEntity.status(HttpStatus.OK).body("All messages set as readed");
+    }
 }

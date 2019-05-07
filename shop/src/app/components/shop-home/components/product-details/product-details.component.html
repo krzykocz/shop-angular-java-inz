@@ -25,7 +25,7 @@
                 <!--<p class="price_discounted">149.90 $</p>-->
                 <form>
                   <div class="form-group">
-                    <label>Ilość:</label>
+                    <label>Dostępność: {{product?.availability}}</label>
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
                         <button (click)="minus()" type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus"

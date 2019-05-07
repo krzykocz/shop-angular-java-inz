@@ -20,6 +20,7 @@ export class ProductCreateUpdateComponent implements OnInit {
     count: '',
     description: '',
     image: '',
+    availability: '',
     category: {
       id: ''
     },
@@ -66,6 +67,7 @@ export class ProductCreateUpdateComponent implements OnInit {
         this.router.navigate(['/product']);
       });
     } else {
+      console.log(this.product);
       this.productService.update(this.product.id, this.product).subscribe(result => {
         this.router.navigate(['/product']);
       });

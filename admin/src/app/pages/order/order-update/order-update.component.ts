@@ -29,6 +29,7 @@ export class OrderUpdateComponent implements OnInit {
     this.id = this._Activatedroute.snapshot.paramMap.get('id');
     this.orderService.getOrderById(this.id).subscribe(result => {
       this.order = result;
+      console.log(result);
     });
     this.orderService.getOrderDetailsByOrderId(this.id).subscribe(result => {
       this.orderItems = result;

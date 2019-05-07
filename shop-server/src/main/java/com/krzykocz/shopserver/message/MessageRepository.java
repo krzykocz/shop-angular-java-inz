@@ -13,4 +13,6 @@ public interface MessageRepository extends JpaRepository<MessageEntity, Long> {
     Page<MessageEntity> findAllByOrderId(Long orderId, Pageable pageable);
 
     List<MessageEntity> findAllByReadedIsFalseAndUserRole(UserRoleEnum role);
+
+    List<MessageEntity> findAllByReadedIsFalseAndOrderIdAndUserId(Long orderId, Long userId);
 }

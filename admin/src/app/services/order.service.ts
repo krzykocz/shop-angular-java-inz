@@ -46,6 +46,10 @@ export class OrderService {
   assignsOrdersToSeller(sellerID, data) {
     return this.http.put(this.url + '/order/assign/' + sellerID, data);
   }
+
+  getOrderStatistics() {
+    return this.http.get(this.url + '/order/seller/count');
+  }
 }
 
 

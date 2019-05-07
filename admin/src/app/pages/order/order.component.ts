@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {OrderService} from '../../services/order.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from '../../services/auth/auth.service';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-order',
@@ -11,14 +12,21 @@ import {AuthService} from '../../services/auth/auth.service';
 export class OrderComponent implements OnInit {
 
   public orders;
-  private url;
+  public url;
+  private user;
+  private checkedOrders = [];
+  private orderids;
 
-  constructor(private orderService: OrderService, private activatedRoute: ActivatedRoute, private authService: AuthService) {
+  constructor(private orderService: OrderService, private activatedRoute: ActivatedRoute, private authService: AuthService, private router: Router, private userService: UserService) {
   }
 
   ngOnInit() {
     this.activatedRoute.url.subscribe(next => {
       this.url = next[1].path;
+    });
+
+    this.userService.getAuthenticatedUser().subscribe(result => {
+      this.user = result;
     });
 
     this.getOrders();
@@ -36,5 +44,22 @@ export class OrderComponent implements OnInit {
         console.log(data);
       });
     }
+  }
+
+  assign() {
+    this.orderids = {
+      ids: this.checkedOrders
+    };
+
+    this.orderService.assignsOrdersToSeller(this.user['id'], this.orderids).subscribe(result => {
+      this.router.navigate(['/order/allocated']);
+    });
+
+    setTimeout(() => {
+        this.router.navigate(['/order/allocated']);
+      },
+      500);
+
+
   }
 }

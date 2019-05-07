@@ -18,7 +18,7 @@
         <div class="card-body">
           <div class="table-responsive">
 
-            <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Wyszukaj po nazwie produktu" />
+<!--            <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Wyszukaj po nazwie produktu" />-->
 
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
@@ -41,8 +41,14 @@
               </tr>
               </tfoot>
               <tbody>
+              <tr>
+                <td></td>
+                <td colspan="2"><input type="text" [(ngModel)]="nameSearch" class="form-control" placeholder="Wyszukaj po nazwie produktu" /></td>
+                <td><input type="text" [(ngModel)]="countSearch" class="form-control" placeholder="Wyszukaj po nazwie ilości" /></td>
+                <td><input type="text" [(ngModel)]="priceSearch" class="form-control" placeholder="Wyszukaj po nazwie cenie" /></td>
+              </tr>
 
-              <tr *ngFor="let product of products | jsonFilterBy: [searchText, 'name']">
+              <tr *ngFor="let product of products | jsonFilterBy: [nameSearch, 'name'] | jsonFilterBy: [countSearch, 'count'] | jsonFilterBy: [priceSearch, 'price']">
                 <td><img src="{{product.image}}" alt="White Blouse Armani"></td>
                 <td colspan="2"><a [routerLink]="['/product/',product.id]">{{product.name}}</a></td>
                 <td>{{product.count}}</td>

@@ -15,6 +15,7 @@ export class UserOrderDetailsComponent implements OnInit {
   public orderItems: any;
   public total = 0;
   public messages;
+  public complaint;
 
   public message = {
     message: ''
@@ -29,6 +30,7 @@ export class UserOrderDetailsComponent implements OnInit {
     this.orderService.getUserOrderById(this.id).subscribe(result => {
       console.log(result);
       this.order = result;
+      this.complaint = result['complaint'];
     });
 
     this.orderService.getOrderDetailsByOrderId(this.id).subscribe(result => {

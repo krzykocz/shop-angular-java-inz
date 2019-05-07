@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Entity
 @Table(name = "order", schema = "public")
@@ -43,4 +44,13 @@ public class OrderEntity extends AuditEntity {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "seller_id", nullable = true)
     private UserEntity seller;
+
+    @Column(name = "complaint")
+    private boolean complaint = false;
+
+    @Column(name = "complaint_description")
+    private String complaintDescription;
+
+    @Column(name = "complaint_date")
+    private Date complaintDate;
 }

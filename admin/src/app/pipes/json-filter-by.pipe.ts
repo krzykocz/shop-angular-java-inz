@@ -24,7 +24,7 @@ export class JsonFilterByPipe implements PipeTransform {
         console.log('Search key is available in JSON object.');
 
         if (typeof filterObjectEntery[jsonKey] !== 'undefined' &&
-          filterObjectEntery[jsonKey].toLowerCase().indexOf(searchText.toLowerCase()) > -1) {
+          filterObjectEntery[jsonKey].toString().toLowerCase().indexOf(searchText.toLowerCase()) > -1) {
           // object value contains the user provided text.
         } else {
           // object didn't match a filter value so remove it from array via filter

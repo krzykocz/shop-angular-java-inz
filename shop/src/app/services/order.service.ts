@@ -23,6 +23,10 @@ export class OrderService {
     return this.http.post(this.url + '/order/create', data);
   }
 
+  complaint(data) {
+    return this.http.put(this.url + '/order/' + data.id + '/complaint', data);
+  }
+
   getAllOrders() {
     return this.http.get(this.url + '/order?sort=createdAt,desc');
   }

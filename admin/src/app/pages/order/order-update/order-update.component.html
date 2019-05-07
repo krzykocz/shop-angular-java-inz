@@ -67,6 +67,8 @@
                   </option>
                   <option [value]="'Zrealizowano'" [selected]="order.status == 'Zrealizowano'">Zrealizowano</option>
                 </select></th>
+                <th>Adres dostawy:</th>
+                <th>{{order?.user.firstname}} {{order?.user.lastname}}<br>{{order?.user.postalCode}} {{order?.user.city}}, {{order?.user.street}} {{order?.user.houseNr}}</th>
               </tr>
               </tfoot>
 

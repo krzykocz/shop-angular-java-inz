@@ -17,11 +17,7 @@
         </div>
         <div class="card-body">
           <div class="table-responsive">
-
-
-            <!--<div class="row col-md-12" >-->
-              <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Wyszukaj po nazwie użytkownika" />
-            <!--</div>-->
+            
 
 
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -31,6 +27,12 @@
                 <th>Email</th>
                 <th>Rola</th>
                 <th>Opcje</th>
+              </tr>
+              <tr>
+                <th><input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Wyszukaj po nazwie użytkownika" /></th>
+                <th><input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Wyszukaj po adresie e-mail" /></th>
+                <th><input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Wyszukaj po roli" /></th>
+                <th></th>
               </tr>
               </thead>
               <tfoot>
